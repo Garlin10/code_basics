@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Coding Guide: Level 1</title>
+  <link rel="stylesheet" href="style.css">    <!-- Global styles (canvas) -->
+  <link rel="stylesheet" href="box-style.css"> <!-- Separate box styles -->
+  <style>
+    table {
+      margin: 40px auto;
+      border-collapse: collapse;
+      width: 80%;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    .preview-box {
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+    }
+    .example1 { background-color: tomato; }
+    .example2 { background-color: #4caf50; border-radius: 10px; }
+    .example3 { background: linear-gradient(to right, red, orange); }
+    .example4 { border: 2px dashed blue; background-color: white; }
+    .example5 { box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); background-color: lightgray; }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="box"></div>
+  </div>
+
+  <h2>Level 1: Style the Box!</h2>
+  <p>In this level, your goal is to style the box inside the canvas area using only CSS. You can change the box's style, color, and position. Try it out!</p>
+
+  <h3>Example Styles</h3>
+  <table>
+    <tr>
+      <th>Preview</th>
+      <th>Style</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td><div class="preview-box example1"></div></td>
+      <td><code>background-color: tomato;</code></td>
+      <td>Change the color to a fun red-orange.</td>
+    </tr>
+    <tr>
+      <td><div class="preview-box example2"></div></td>
+      <td><code>border-radius: 10px;</code></td>
+      <td>Round the corners a bit for a softer look.</td>
+    </tr>
+    <tr>
+      <td><div class="preview-box example3"></div></td>
+      <td><code>background: linear-gradient(to right, red, orange);</code></td>
+      <td>Use a gradient for a colorful effect.</td>
+    </tr>
+    <tr>
+      <td><div class="preview-box example4"></div></td>
+      <td><code>border: 2px dashed blue;</code></td>
+      <td>Add a dashed border to the box.</td>
+    </tr>
+    <tr>
+      <td><div class="preview-box example5"></div></td>
+      <td><code>box-shadow: 2px 2px 5px ...</code></td>
+      <td>Make the box pop out with a soft shadow.</td>
+    </tr>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>

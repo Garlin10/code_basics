@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Coding Guide: Level 3</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="box-style.css">
+</head>
+<body>
+  <div class="canvas">
+    <div class="box" style="top: 0px; left: 20px;"></div>
+    <!-- Target numbers -->
+    <div class="target" data-target="1" style="top: 220px; left: 220px;">Finish</div>
+  </div>
+
+  <h2>Level 3: Reach the Center!</h2>
+
+  <p>
+    You are now inside a spiral maze. Your red box starts at the top-left corner. 
+    Your goal is to reach the yellow square marked <strong>1</strong> — but don’t touch the walls!
+  </p>
+  
+  <p>
+    The canvas is divided into <code>20×20</code> pixel squares. Use <code>moveBoxBy(x, y)</code> 
+    to move one step at a time. Use <code>await</code> to add a short pause between moves.
+  </p>
+  
+  <p>
+    ⚠️ <strong>Challenge:</strong> Reach the target with the <em>least amount of code</em> possible. 
+    That means no repeating 20+ lines of <code>await moveBoxBy(...)</code>. Try using <code>for</code> loops to be smart!
+  </p>
+  
+  <pre><code>
+  // Example start: Going down 3 steps
+  async function moveToTarget() {
+    for (let i = 0; i < 3; i++) {
+      await moveBoxBy(0, 20); // down
+    }
+  
+    // Now you go on...
+  }
+  
+  moveToTarget();
+  </code></pre>
+  
+  <p>✨ Bonus: You can experiment with nested loops or even arrays of directions if you want to get fancy!</p>
+  <p><strong>Hint:</strong> Count how many squares you need to go in each direction before turning. There’s a pattern 😉</p>
+  <p><strong>Extra hint:</strong> Try using a <code>for</code> loop that decreases by 2 each time. 
+  Inside that loop, move the box in two directions — and change directions every time using a variable. 
+  Maybe something like <code>even = true</code>... 🤔</p>
+  
+  <script>
+    const canvas = document.querySelector('.canvas');
+    const cellSize = 20;
+    let x = 0, y = 0;
+    let length = 24;
+    let direction = 0;
+  
+    while (length > 0) {
+      let dy = 0, dx = 0;
+  
+      if (direction % 4 === 0)      [dy, dx] = [1, 0];   // down
+      else if (direction % 4 === 1) [dy, dx] = [0, 1];   // right
+      else if (direction % 4 === 2) [dy, dx] = [-1, 0];  // up
+      else if (direction % 4 === 3) [dy, dx] = [0, -1];  // left 👈
+  
+      for (let i = 0; i < length; i++) {
+        const wall = document.createElement('div');
+        wall.className = 'wall';
+        wall.style.top = (y * cellSize) + 'px';
+        wall.style.left = (x * cellSize) + 'px';
+        canvas.appendChild(wall);
+  
+        y += dy;
+        x += dx;
+      }
+  
+      if (direction % 2 === 1) length -= 2;
+      direction++;
+    }
+   
+
+  </script>
+  
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
