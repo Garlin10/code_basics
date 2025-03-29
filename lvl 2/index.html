@@ -3,64 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Basic Coding Guide: Level 2</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="box-style.css">
+  <title>Basic Coding Guide: Level 1</title>
+  <link rel="stylesheet" href="style.css">    <!-- Global styles (canvas) -->
+  <link rel="stylesheet" href="box-style.css"> <!-- Separate box styles -->
+  <style>
+    table {
+      margin: 40px auto;
+      border-collapse: collapse;
+      width: 80%;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    .preview-box {
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+    }
+    .example1 { background-color: tomato; }
+    .example2 { background-color: #4caf50; border-radius: 10px; }
+    .example3 { background: linear-gradient(to right, red, orange); }
+    .example4 { border: 2px dashed blue; background-color: white; }
+    .example5 { box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); background-color: lightgray; }
+  </style>
 </head>
 <body>
   <div class="canvas">
     <div class="box"></div>
-    <!-- Target numbers -->
-    <div class="target" data-target="1" style="top: 60px; left: 200px;">1</div>
-    <div class="target" data-target="2" style="top: 160px; left: 100px;">2</div>
-    <div class="target" data-target="3" style="top: 300px; left: 360px;">3</div>
   </div>
 
-  <h2>Level 2: Move the Box!</h2>
+  <h2>Level 2: Become a Chameleon 🦎</h2>
+
   <p>
-    Numbers have appeared on the board! In this level, you'll write JavaScript to move your red box around the grid.
-    The canvas is divided into 20×20 pixel squares. Try moving the box <strong>step by step</strong> using pixel pushes.
+    In this level, your box should change color based on which colored quadrant it's in.
+    Each quadrant of the canvas has a different background color.
   </p>
   
   <p>
-    Here’s a helper function that moves the box by a small step, with a short delay so you can see each move in action:
+    Your goal is to write a function called <code>checkZone()</code> that detects the box’s position
+    and updates its <code>backgroundColor</code> to match the zone it's in.
+  </p>
+  
+  <p>
+    You’ll need to use <strong>if</strong>, <strong>else if</strong>, and <strong>else</strong> statements to solve this!
+  </p>
+  
+  <p>
+    Here's a very simple example to get you started:
   </p>
   
   <pre><code>
-  // Move the box step-by-step with a delay
-  async function moveBoxBy(x, y, delay = 500) {
+  // zone-checker.js
+  function checkZone() {
     const box = document.querySelector('.box');
     const top = parseInt(box.style.top || "0");
     const left = parseInt(box.style.left || "0");
   
-    // Wait before moving
-    await new Promise(resolve => setTimeout(resolve, delay));
-  
-    box.style.top = (top + y) + "px";
-    box.style.left = (left + x) + "px";
+    if (top < 250 && left < 250) {
+      box.style.backgroundColor = 'green'; // top-left
+    } else {
+      box.style.backgroundColor = 'yellow'; // everything else
+    }
   }
   </code></pre>
   
   <p>
-    To use it, you must create an <code>async</code> function and use <code>await</code> to wait between steps. Like this:
+    🧠 Hint: You’ll need to check for all 4 corners! Try comparing <code>top</code> and <code>left</code> to 250.
   </p>
-  
-  <pre><code>
-  async function moveToTarget() {
-    await moveBoxBy(20, 0); // right
-    await moveBoxBy(0, 20); // down
-    await moveBoxBy(0, 20); // down
-  }
-  
-  moveToTarget();
-  </code></pre>
-  
-  <p>
-    🧠 Each call to <code>moveBoxBy</code> moves the box by one 20px square after a short pause. This will come in handy in the next level, where you'll use a <code>for</code> loop!
-  </p>
-  
+  <h3>💎 Bonus Challenge: The Blended Zones</h3>
+<p>
+  What happens if your box is exactly on the line between two colors?<br>
+  Or even right in the <strong>center</strong> of all four?
+</p>
+
+<p>
+  Try detecting these edge cases and using <code>box.style.background</code> to mix colors.
+  Here’s an example of how you could combine green and yellow:
+</p>
+
+<pre><code>
+// Example: box split vertically between green and yellow
+box.style.background = 'linear-gradient(to right, green 50%, yellow 50%)';
+</code></pre>
+
+<p>
+  Can you make it split into 4 colors in a chameleon swirl? 🦎✨
+</p>
 
 
-  <script src="script.js"></script>
+<!-- At the bottom of body in index.html -->
+<script src="zone-checker.js"></script>
+<script src="movement.js"></script>
+
 </body>
 </html>

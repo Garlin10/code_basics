@@ -1,0 +1,15 @@
+.box {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  position: absolute;
+  z-index: 2; /* stays above the tail */
+}
+
+.tail {
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  position: absolute;
+  z-index: 1;
+}

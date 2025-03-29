@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Level 5: Grow the Tail 🐍</title>
+  <link rel="stylesheet" href="snake.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="canvas">
+    <div class="box" style="top: 0px; left: 20px;"></div>
+  </div>
+
+  <h2>Level 5: Grow the Tail 🐍</h2>
+
+<p>
+  You've built a moving box — now it's time to grow a tail! In this level, you won't modify the movement logic. Instead, your job is to track the box’s movement and draw a green tail behind it.
+</p>
+
+<p>
+  Open <code>tail.js</code>. You’ll find a function called <code>updateTail(top, left)</code> — this is called automatically every time the box moves.
+</p>
+
+<h3>🧠 Your mission:</h3>
+<ul>
+  <li>Save the box’s <strong>previous position</strong> into an array</li>
+  <li>Only keep the <strong>last 5 positions</strong> (like a snake body)</li>
+  <li>Create new green <code>&lt;div class="tail"&gt;</code> segments at each saved position</li>
+  <li>Make sure you don’t overwrite the red head (<code>.box</code>)</li>
+</ul>
+
+<h3>💡 Hints:</h3>
+<ul>
+  <li>Use <code>positions.push({ top, left })</code> to store data</li>
+  <li>Use <code>positions.shift()</code> to remove the oldest entry</li>
+  <li>You can remove elements using <code>element.remove()</code></li>
+  <li>Use <code>document.createElement('div')</code> to create new tail pieces</li>
+</ul>
+
+<pre><code>
+// Get previous box position:
+const box = document.querySelector('.box');
+const prevTop = parseInt(box.style.top);
+const prevLeft = parseInt(box.style.left);
+</code></pre>
+
+<p>
+  ✨ Bonus: Try coloring the tail differently, or extending its length dynamically!
+</p>
+
+
+  <script src="movement.js"></script>
+  <script src="tail.js"></script>
+</body>
+</html>

@@ -5,23 +5,22 @@
   margin: 50px auto;
   border: 2px solid black;
 
-  background-color: #fff;
   background-image:
+    /* Grid lines */
     linear-gradient(to right, #ccc 1px, transparent 1px),
-    linear-gradient(to bottom, #ccc 1px, transparent 1px);
-  background-size: 20px 20px;
-  background-position: top left;
-}
+    linear-gradient(to bottom, #ccc 1px, transparent 1px),
 
-.target {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  font-size: 14px;
-  font-weight: bold;
-  color: black;
-  text-align: center;
-  line-height: 20px;
-  background-color: yellow;
-  border: 1px solid black;
+    /* Soft quadrant fills */
+    linear-gradient(to right, rgba(0, 128, 0, 0.80) 250px, rgba(255, 255, 0, 0.80) 250px),
+    linear-gradient(to right, rgba(255, 166, 0, 0.8) 250px, rgba(0, 0, 255, 0.80) 250px);
+
+  background-size:
+    20px 20px, 20px 20px,      /* grid lines */
+    500px 250px, 500px 250px;  /* quadrant fills */
+
+  background-position:
+    top left, top left,
+    top, bottom;
+
+  background-repeat: repeat, repeat, no-repeat, no-repeat;
 }
