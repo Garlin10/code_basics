@@ -17,6 +17,12 @@ window.addEventListener("DOMContentLoaded", () => {
             render(dots);
           }
           return;
+        case 'c':
+          if (typeof clearDots === 'function') {
+            clearDots();
+          }
+
+          return;
         default: return;
       }
   

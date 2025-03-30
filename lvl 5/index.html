@@ -53,8 +53,38 @@
   <p>
     This list will be used to draw all the dots you've painted. Watch them appear as you move and press space!
   </p>
+  <h3>✨ Bonus Task: Clear the Canvas 🧽</h3>
+
+  <p>
+    Wouldn’t it be nice if you could start over? Let’s add a way to clear all the painted dots from the canvas.
+  </p>
   
-  <p>✨ Bonus: Try logging <code>console.log(dots)</code> to see your list grow!</p>
+  <p>
+    Inside <code>painter.js</code>, there’s a new function called <code>clearDots()</code>. This function should:
+  </p>
+  
+  <ol>
+    <li>Empty the <code>dots</code> list (clear everything that’s been stored)</li>
+    <li>Remove all painted dots from the canvas</li>
+  </ol>
+  
+  <h4>💡 Hints:</h4>
+  <ul>
+    <li>You can reset an array using <code>dots.length = 0;</code></li>
+    <li>Use <code>querySelectorAll('.dot')</code> to find all the dot elements</li>
+    <li>Loop through them and call <code>.remove()</code> to delete each one</li>
+  </ul>
+  
+  <p>
+    🧪 Once you’re done, press the <code>C</code> key on your keyboard — your canvas should be clean again!
+  </p>
+  
+  <pre><code>// painter.js
+  function clearDots() {
+    // Step 1: Clear the list
+  }
+  </code></pre>
+  <p>✨ EXTRA Bonus: Try logging <code>console.log(dots)</code> to see your list grow!</p>
   
 
   <script src="movement.js"></script>
