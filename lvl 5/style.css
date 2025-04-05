@@ -1,25 +1,27 @@
 .canvas {
-    width: 500px;
-    height: 500px;
-    position: relative;
-    margin: 50px auto;
-    border: 2px solid black;
-    background-color: #fafafa;
-  }
-  
-  .box {
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    position: absolute;
-    z-index: 2;
-  }
-  
-  .dot {
-    width: 20px;
-    height: 20px;
-    background-color: blue;
-    position: absolute;
-    z-index: 1;
-  }
-  
+  width: 500px;
+  height: 500px;
+  position: relative;
+  margin: 50px auto;
+  border: 2px solid black;
+
+  background-color: #fff;
+  background-image:
+    linear-gradient(to right, #ccc 1px, transparent 1px),
+    linear-gradient(to bottom, #ccc 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: top left;
+}
+
+.target {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  line-height: 20px;
+  background-color: yellow;
+  border: 1px solid black;
+}
