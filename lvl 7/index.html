@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Level 7: Knight Rider Lights 💡</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="canvas">
+      <div class="box" style="top: 240px; left: 0px"></div>
+    </div>
+
+    <h2>Level 7: Knight Rider Lights 💡</h2>
+    <p>
+      Your red box is now a scanner light — like KITT from <em>Knight Rider</em>!
+      Make it sweep left to right... then back again. 🔁
+    </p>
+
+    <h3>🔢 Your Tasks:</h3>
+    <ol>
+      <li>The red light already moves automatically — nothing to do there ✅</li>
+      <li>Each time it moves, it leaves a red dot (that part is also done ✅)</li>
+      <li><strong>Your mission:</strong> Keep only the <strong>last 3 dots</strong> on the screen!</li>
+    </ol>
+
+    <h3>🧠 What You Need to Do</h3>
+    <p>
+      Open <code>trail.js</code> — there is a function called <code>addDot(dot)</code>. You’ll complete it!
+    </p>
+
+    <h4>Inside <code>addDot(dot)</code>, do the following:</h4>
+    <ul>
+      <li>Use <code>push()</code> to add each new dot to the end of the <code>trail</code> array</li>
+      <li>When the array gets longer than 3, remove the oldest dot:
+        <ul>
+          <li>Use <code>trail[trail.length - 4].remove()</code> to remove the oldest dot from the screen</li>
+          <li>Then call <code>trail.shift()</code> to remove it from the array</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>💡 Concepts You’ll Practice</h3>
+    <ul>
+      <li><code>push()</code> – add a new item to the array</li>
+      <li><code>length</code> – check how many items are in the array</li>
+      <li><code>array[index]</code> – get the oldest dot</li>
+      <li><code>.remove()</code> – remove that dot from the screen</li>
+      <li><code>shift()</code> – clean up the array</li>
+    </ul>
+
+    <h3>✨ Bonus Challenge</h3>
+    <ul>
+      <li>Try showing <strong>5 dots</strong> instead of 3</li>
+      <li>Make it go faster or slower</li>
+      <li>Can you make it bounce vertically too?</li>
+    </ul>
+
+    <script src="trail.js"></script>
+    <script src="knight.js"></script>
+  </body>
+</html>

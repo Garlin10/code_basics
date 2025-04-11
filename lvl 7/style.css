@@ -1,0 +1,25 @@
+.canvas {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  margin: 50px auto;
+  border: 2px solid black;
+  background-color: #fafafa;
+}
+
+.box {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  position: absolute;
+  box-shadow: 0 0 10px red;
+  z-index: 2;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 0, 0, 0.55);
+  position: absolute;
+  z-index: 1;
+}
